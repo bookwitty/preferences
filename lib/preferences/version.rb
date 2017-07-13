@@ -1,3 +1,3 @@
 module Preferences
-  VERSION = '0.4.2'
+  VERSION = '1.0.0.pre1'.freeze
 end

@@ -1,0 +1,29 @@
+inherit_from: .rubocop_todo.yml
+
+# Offense count: 7
+Metrics/AbcSize:
+  Max: 54
+
+# Offense count: 1
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+# Offense count: 134
+# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
+# URISchemes: http, https
+Metrics/LineLength:
+  Max: 221
+
+# Offense count: 7
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 48
+
+# Offense count: 1
+# Configuration parameters: CountComments.
+Metrics/ModuleLength:
+  Max: 143
+
+# Offense count: 1
+Metrics/PerceivedComplexity:
+  Max: 10
