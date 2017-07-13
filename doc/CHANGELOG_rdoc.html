@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>CHANGELOG - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-master">master</a>
+    <li><a href="#label-0.4.2+-2F+2010-04-17">0.4.2 / 2010-04-17</a>
+    <li><a href="#label-0.4.1+-2F+2010-03-07">0.4.1 / 2010-03-07</a>
+    <li><a href="#label-0.4.0+-2F+2010-03-07">0.4.0 / 2010-03-07</a>
+    <li><a href="#label-0.3.1+-2F+2009-04-25">0.3.1 / 2009-04-25</a>
+    <li><a href="#label-0.3.0+-2F+2009-04-13">0.3.0 / 2009-04-13</a>
+    <li><a href="#label-0.2.0+-2F+2008-12-14">0.2.0 / 2008-12-14</a>
+    <li><a href="#label-0.1.5+-2F+2008-11-16">0.1.5 / 2008-11-16</a>
+    <li><a href="#label-0.1.4+-2F+2008-10-26">0.1.4 / 2008-10-26</a>
+    <li><a href="#label-0.1.3+-2F+2008-06-29">0.1.3 / 2008-06-29</a>
+    <li><a href="#label-0.1.2+-2F+2008-06-22">0.1.2 / 2008-06-22</a>
+    <li><a href="#label-0.1.1+-2F+2008-06-20">0.1.1 / 2008-06-20</a>
+    <li><a href="#label-0.1.0+-2F+2008-06-19">0.1.0 / 2008-06-19</a>
+    <li><a href="#label-0.0.1+-2F+2008-05-10">0.0.1 / 2008-05-10</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li><a href="./Gemfile.html">Gemfile</a>
+  
+    <li><a href="./Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="./LICENSE.html">LICENSE</a>
+  
+    <li><a href="./README_rdoc.html">README</a>
+  
+    <li><a href="./Rakefile.html">Rakefile</a>
+  
+    <li><a href="./generators/preferences/USAGE.html">USAGE</a>
+  
+    <li><a href="./preferences_gemspec.html">preferences.gemspec</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page CHANGELOG.rdoc">
+
+<h2 id="label-master">master<span><a href="#label-master">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h2 id="label-0.4.2+-2F+2010-04-17">0.4.2 / 2010-04-17<span><a href="#label-0.4.2+-2F+2010-04-17">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Fix preferences lookup not typecasting values</p>
+</li></ul>
+
+<h2 id="label-0.4.1+-2F+2010-03-07">0.4.1 / 2010-03-07<span><a href="#label-0.4.1+-2F+2010-03-07">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Add support for per-group default preferences</p>
+</li><li>
+<p>Fix unsaved boolean preferences getting overridden by defaults if value is
+false</p>
+</li></ul>
+
+<h2 id="label-0.4.0+-2F+2010-03-07">0.4.0 / 2010-03-07<span><a href="#label-0.4.0+-2F+2010-03-07">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Add {preference}_changed?, {preference}_was, {preference}_changed,
+{preference}_will_change!, and reset_{preference}!</p>
+</li><li>
+<p>Add preferences_changed?, preferences_changed, and preference_changes</p>
+</li><li>
+<p>Fix preferences that are reverted externally still getting stored</p>
+</li><li>
+<p>Fix preference definition types not being used to typecast values</p>
+</li><li>
+<p>No longer allow both group and non-group preferences to be looked up at
+once (except for named scopes)</p>
+</li><li>
+<p>Add support for using Symbols to reference groups</p>
+</li><li>
+<p>Fix reload not causing unsaved preferences to get reset</p>
+</li><li>
+<p>Raise exception if unknown preference is accessed</p>
+</li><li>
+<p>Rename set_preference to write_preference</p>
+</li><li>
+<p>Add caching of preference lookups</p>
+</li><li>
+<p>Fix preferences being stored even if they didn&#39;t change</p>
+</li><li>
+<p>Release gems via rake-gemcutter instead of rubyforge</p>
+</li><li>
+<p>Add a generator for db migration to make installation a bit easier [Tim
+Lowrimore]</p>
+</li><li>
+<p>Add named scopes: with_preferences and without_preferences</p>
+</li></ul>
+
+<h2 id="label-0.3.1+-2F+2009-04-25">0.3.1 / 2009-04-25<span><a href="#label-0.3.1+-2F+2009-04-25">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Rename Preference#attribute to name to avoid conflicts with reserved
+methods in <a href="ActiveRecord.html">ActiveRecord</a></p>
+</li></ul>
+
+<h2 id="label-0.3.0+-2F+2009-04-13">0.3.0 / 2009-04-13<span><a href="#label-0.3.0+-2F+2009-04-13">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Add dependency on Rails 2.3</p>
+</li><li>
+<p>Remove dependency on plugins_plus</p>
+</li></ul>
+
+<h2 id="label-0.2.0+-2F+2008-12-14">0.2.0 / 2008-12-14<span><a href="#label-0.2.0+-2F+2008-12-14">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Remove the PluginAWeek namespace</p>
+</li></ul>
+
+<h2 id="label-0.1.5+-2F+2008-11-16">0.1.5 / 2008-11-16<span><a href="#label-0.1.5+-2F+2008-11-16">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Add all prefers/preferred accessors for preferences to be analogous to <a
+href="ActiveRecord.html">ActiveRecord</a> column accessors</p>
+</li><li>
+<p>Fix preferences defined in STI subclasses not working [Quinn Shanahan]</p>
+</li></ul>
+
+<h2 id="label-0.1.4+-2F+2008-10-26">0.1.4 / 2008-10-26<span><a href="#label-0.1.4+-2F+2008-10-26">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Change how the base module is included to prevent namespacing conflicts</p>
+</li></ul>
+
+<h2 id="label-0.1.3+-2F+2008-06-29">0.1.3 / 2008-06-29<span><a href="#label-0.1.3+-2F+2008-06-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Add <code>prefs</code> as an alias for <code>preferences</code></p>
+</li><li>
+<p>Fix <code>preferences</code> not properly selecting preferences when a
+group is specified</p>
+</li><li>
+<p>Improve test coverage</p>
+</li></ul>
+
+<h2 id="label-0.1.2+-2F+2008-06-22">0.1.2 / 2008-06-22<span><a href="#label-0.1.2+-2F+2008-06-22">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Remove log files from gems</p>
+</li></ul>
+
+<h2 id="label-0.1.1+-2F+2008-06-20">0.1.1 / 2008-06-20<span><a href="#label-0.1.1+-2F+2008-06-20">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Rename preference_values hash to preferences</p>
+</li><li>
+<p>Rename preferences association to stored_preferences</p>
+</li></ul>
+
+<h2 id="label-0.1.0+-2F+2008-06-19">0.1.0 / 2008-06-19<span><a href="#label-0.1.0+-2F+2008-06-19">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Avoid string evaluation for dynamic methods</p>
+</li><li>
+<p>Return hashes for the preference_values, e.g.</p>
+
+<p>user.preference_values            # =&gt; {&#39;color&#39; =&gt;
+&#39;red&#39;, &#39;number&#39; =&gt; 11, &#39;website&#39; =&gt;
+{&#39;background&#39; =&gt; &#39;white&#39;, &#39;foreground&#39; =&gt;
+&#39;black&#39;}} user.preference_values(&#39;website&#39;) # =&gt;
+{&#39;background&#39; =&gt; &#39;white&#39;, &#39;foreground&#39; =&gt;
+&#39;black&#39;}</p>
+</li><li>
+<p>Add more generic grouping of preferences than with just other records, e.g.</p>
+
+<p>user.preferred_color(&#39;cars&#39;)</p>
+</li><li>
+<p>Remove support for an options hash when specifying :for associations for
+preference</p>
+</li></ul>
+
+<h2 id="label-0.0.1+-2F+2008-05-10">0.0.1 / 2008-05-10<span><a href="#label-0.0.1+-2F+2008-05-10">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Initial public release</p>
+</li></ul>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.0.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

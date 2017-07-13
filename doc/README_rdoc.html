@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-preferences+http-3A-2F-2Ftravis-ci.org-2Fpluginaweek-2Fpreferences.png">preferences <img src="http://travis-ci.org/pluginaweek/preferences.png" /></a>
+    <li><a href="#label-Resources">Resources</a>
+    <li><a href="#label-Description">Description</a>
+    <li><a href="#label-Usage">Usage</a>
+    <li><a href="#label-Installation">Installation</a>
+    <li><a href="#label-Defining+preferences">Defining preferences</a>
+    <li><a href="#label-Accessing+preferences">Accessing preferences</a>
+    <li><a href="#label-Accessors">Accessors</a>
+    <li><a href="#label-Generic+methods">Generic methods</a>
+    <li><a href="#label-Accessible+preferences">Accessible preferences</a>
+    <li><a href="#label-Accessing+all+preferences">Accessing all preferences</a>
+    <li><a href="#label-Grouping+preferences">Grouping preferences</a>
+    <li><a href="#label-Saving+preferences">Saving preferences</a>
+    <li><a href="#label-Tracking+changes">Tracking changes</a>
+    <li><a href="#label-Testing">Testing</a>
+    <li><a href="#label-Dependencies">Dependencies</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li><a href="./Gemfile.html">Gemfile</a>
+  
+    <li><a href="./Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="./LICENSE.html">LICENSE</a>
+  
+    <li><a href="./README_rdoc.html">README</a>
+  
+    <li><a href="./Rakefile.html">Rakefile</a>
+  
+    <li><a href="./generators/preferences/USAGE.html">USAGE</a>
+  
+    <li><a href="./preferences_gemspec.html">preferences.gemspec</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.rdoc">
+
+<h2 id="label-preferences+http-3A-2F-2Ftravis-ci.org-2Fpluginaweek-2Fpreferences.png">preferences <img src="http://travis-ci.org/pluginaweek/preferences.png" /><span><a href="#label-preferences+http-3A-2F-2Ftravis-ci.org-2Fpluginaweek-2Fpreferences.png">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><code>preferences</code> adds support for easily creating custom
+preferences for models.</p>
+
+<h2 id="label-Resources">Resources<span><a href="#label-Resources">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>API</p>
+<ul><li>
+<p><a
+href="http://rdoc.info/github/pluginaweek/preferences/master/frames">rdoc.info/github/pluginaweek/preferences/master/frames</a></p>
+</li></ul>
+
+<p>Bugs</p>
+<ul><li>
+<p><a
+href="http://github.com/pluginaweek/preferences/issues">github.com/pluginaweek/preferences/issues</a></p>
+</li></ul>
+
+<p>Development</p>
+<ul><li>
+<p><a
+href="http://github.com/pluginaweek/preferences">github.com/pluginaweek/preferences</a></p>
+</li></ul>
+
+<p>Testing</p>
+<ul><li>
+<p><a
+href="http://travis-ci.org/pluginaweek/preferences">travis-ci.org/pluginaweek/preferences</a></p>
+</li></ul>
+
+<p>Source</p>
+<ul><li>
+<p>git://github.com/pluginaweek/preferences.git</p>
+</li></ul>
+
+<p>Mailing List</p>
+<ul><li>
+<p><a
+href="http://groups.google.com/group/pluginaweek-talk">groups.google.com/group/pluginaweek-talk</a></p>
+</li></ul>
+
+<h2 id="label-Description">Description<span><a href="#label-Description">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><a href="Preferences.html">Preferences</a> for models within an
+application, such as for users, is a pretty common idiom.  Although the
+rule of thumb is to keep the number of preferences available to a minimum,
+sometimes it&#39;s necessary if you want users to be able to disable things
+like e-mail notifications.</p>
+
+<p>Generally, basic preferences can be accomplished through simple designs,
+such as additional columns or a bit vector described and implemented by <a
+href="http://agilewebdevelopment.com/plugins/preferencefu">preference_fu</a>.
+However, as you find the need for non-binary preferences and the number of
+preferences becomes unmanageable as individual columns in the database, the
+next step is often to create a separate “preferences” table.  This is where
+the <code>preferences</code> plugin comes in.</p>
+
+<p><code>preferences</code> encapsulates this design by exposing preferences
+using simple attribute accessors on the model, hiding the fact that
+preferences are stored in a separate table and making it dead-simple to
+define and manage preferences.</p>
+
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p><code>preferences</code> requires an additional database table to work. 
+You can generate a migration for this table like so:</p>
+
+<pre>script/generate preferences</pre>
+
+<p>Then simply migrate your database:</p>
+
+<pre class="ruby"><span class="ruby-identifier">rake</span> <span class="ruby-identifier">db</span>:<span class="ruby-identifier">migrate</span>
+</pre>
+
+<h3 id="label-Defining+preferences">Defining preferences<span><a href="#label-Defining+preferences">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>To define the preferences for a model, you can do so right within the
+model:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">User</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">preference</span> :<span class="ruby-identifier">hot_salsa</span>
+  <span class="ruby-identifier">preference</span> :<span class="ruby-identifier">dark_chocolate</span>, :<span class="ruby-identifier">default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">preference</span> :<span class="ruby-identifier">color</span>, :<span class="ruby-identifier">string</span>
+  <span class="ruby-identifier">preference</span> :<span class="ruby-identifier">favorite_number</span>
+  <span class="ruby-identifier">preference</span> :<span class="ruby-identifier">language</span>, :<span class="ruby-identifier">string</span>, :<span class="ruby-identifier">default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;English&#39;</span>, :<span class="ruby-identifier">group_defaults</span> =<span class="ruby-operator">&gt;</span> {:<span class="ruby-identifier">chat</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;Spanish&#39;</span>}
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>In the above model, 5 preferences have been defined:</p>
+<ul><li>
+<p>hot_salsa</p>
+</li><li>
+<p>dark_chocolate</p>
+</li><li>
+<p>color</p>
+</li><li>
+<p>favorite_number</p>
+</li><li>
+<p>language</p>
+</li></ul>
+
+<p>For each preference, a data type and default value can be specified.  If no
+data type is given, it&#39;s assumed to be a boolean value.  If no default
+value is given, the default is assumed to be nil.</p>
+
+<h3 id="label-Accessing+preferences">Accessing preferences<span><a href="#label-Accessing+preferences">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Once preferences have been defined for a model, they can be accessed either
+using the accessor methods that are generated for each preference or the
+generic methods that are not specific to a particular preference.</p>
+
+<h4 id="label-Accessors">Accessors<span><a href="#label-Accessors">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>There are several shortcut methods that are generated for each preference
+defined on a model.  These reflect the same set of methods (attribute
+accessors) that are generated for a model&#39;s columns.  Examples of these
+are shown below:</p>
+
+<p>Query methods:</p>
+
+<pre class="ruby"><span class="ruby-identifier">user</span>.<span class="ruby-identifier">prefers_hot_salsa?</span>         <span class="ruby-comment"># =&gt; false</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_language?</span>        <span class="ruby-comment"># =&gt; true</span>
+</pre>
+
+<p>Reader methods:</p>
+
+<pre class="ruby"><span class="ruby-identifier">user</span>.<span class="ruby-identifier">prefers_hot_salsa</span>          <span class="ruby-comment"># =&gt; false</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_language</span>         <span class="ruby-comment"># =&gt; &quot;English&quot;</span>
+</pre>
+
+<p>Writer methods:</p>
+
+<pre class="ruby"><span class="ruby-identifier">user</span>.<span class="ruby-identifier">prefers_hot_salsa</span> = <span class="ruby-keyword">false</span>        <span class="ruby-comment"># =&gt; false</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_language</span> = <span class="ruby-string">&#39;English&#39;</span>   <span class="ruby-comment"># =&gt; &quot;English&quot;</span>
+</pre>
+
+<h4 id="label-Generic+methods">Generic methods<span><a href="#label-Generic+methods">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Each preference accessor is essentially a wrapper for the various generic
+methods shown below:</p>
+
+<p>Query method:</p>
+
+<pre class="ruby"><span class="ruby-identifier">user</span>.<span class="ruby-identifier">prefers?</span>(:<span class="ruby-identifier">hot_salsa</span>)     <span class="ruby-comment"># =&gt; false</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred?</span>(:<span class="ruby-identifier">language</span>)    <span class="ruby-comment"># =&gt; true</span>
+</pre>
+
+<p>Reader method:</p>
+
+<pre class="ruby"><span class="ruby-identifier">user</span>.<span class="ruby-identifier">prefers</span>(:<span class="ruby-identifier">hot_salsa</span>)      <span class="ruby-comment"># =&gt; false</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred</span>(:<span class="ruby-identifier">language</span>)     <span class="ruby-comment"># =&gt; &quot;English&quot;</span>
+</pre>
+
+<p>Write method:</p>
+
+<pre class="ruby"><span class="ruby-identifier">user</span>.<span class="ruby-identifier">write_preference</span>(:<span class="ruby-identifier">hot_salsa</span>, <span class="ruby-keyword">false</span>)      <span class="ruby-comment"># =&gt; false</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">write_preference</span>(:<span class="ruby-identifier">language</span>, <span class="ruby-string">&quot;English&quot;</span>)   <span class="ruby-comment"># =&gt; &quot;English&quot;</span>
+</pre>
+
+<h3 id="label-Accessible+preferences">Accessible preferences<span><a href="#label-Accessible+preferences">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>If you want a preference to be accessible via the <code>attributes</code>
+method on the model, use the <code>accessible_preference</code> method:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">User</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">accessible_preference</span> :<span class="ruby-identifier">hot_salsa</span>
+  <span class="ruby-identifier">accessible_preference</span> :<span class="ruby-identifier">two_percent_milk</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Now, you can easily update all the preferences at once from your
+controllers:</p>
+
+<p>In the view:</p>
+
+<pre>- form_for @user do |f|
+  = f.check_box :prefers_hot_salsa
+  = f.check_box :prefers_two_percent_milk</pre>
+
+<p>In the controller:</p>
+
+<pre>UsersController &lt; ApplicationController
+  def update
+    @user = User.find(params[:id])
+    @user.attributes = params[:user]
+
+    flash.notice = &#39;Saved preferences&#39; if @user.save
+
+    render &#39;edit&#39;
+  end
+end</pre>
+
+<h3 id="label-Accessing+all+preferences">Accessing all preferences<span><a href="#label-Accessing+all+preferences">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>To get the collection of all custom, stored preferences for a particular
+record, you can access the <code>stored_preferences</code> has_many
+association which is automatically generated:</p>
+
+<pre class="ruby"><span class="ruby-identifier">user</span>.<span class="ruby-identifier">stored_preferences</span>
+</pre>
+
+<p>In addition to this, you can get a hash of all stored preferences
+<strong>and</strong> default preferences, by accessing the
+<code>preferences</code> helper:</p>
+
+<pre class="ruby"><span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferences</span>  <span class="ruby-comment"># =&gt; {&quot;language&quot;=&gt;&quot;English&quot;, &quot;color&quot;=&gt;nil}</span>
+</pre>
+
+<p>This hash will contain the value for every preference that has been defined
+for the model, whether that&#39;s the default value or one that has been
+previously stored.</p>
+
+<p>A short-hand alternative for preferences is also available:</p>
+
+<pre class="ruby"><span class="ruby-identifier">user</span>.<span class="ruby-identifier">prefs</span>  <span class="ruby-comment"># =&gt; {&quot;language&quot;=&gt;&quot;English&quot;, &quot;color&quot;=&gt;nil}</span>
+</pre>
+
+<h3 id="label-Grouping+preferences">Grouping preferences<span><a href="#label-Grouping+preferences">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>In addition to defining generic preferences for the owning record, you can
+also group preferences by <a href="ActiveRecord.html">ActiveRecord</a>
+objects or arbitrary names.  This is best shown through an example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">first</span>)
+<span class="ruby-identifier">car</span> = <span class="ruby-constant">Car</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">first</span>)
+
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_color</span> = <span class="ruby-string">&#39;red&#39;</span>, <span class="ruby-identifier">car</span>
+<span class="ruby-comment"># user.write_preference(:color, &#39;red&#39;, car) # The generic way</span>
+</pre>
+
+<p>This will create a color preference of “red” for the given car.  In this
+way, you can have “color” preferences for different records.</p>
+
+<p>To access the preference for a particular record, you can use the same
+accessor methods as before:</p>
+
+<pre class="ruby"><span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_color</span>(<span class="ruby-identifier">car</span>)
+<span class="ruby-comment"># user.preferred(:color, car) # The generic way</span>
+</pre>
+
+<p>In addition to grouping preferences for a particular record, you can also
+group preferences by name.  For example,</p>
+
+<pre class="ruby"><span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">first</span>)
+
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_color</span> = <span class="ruby-string">&#39;red&#39;</span>, :<span class="ruby-identifier">automobiles</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_color</span> = <span class="ruby-string">&#39;tan&#39;</span>, :<span class="ruby-identifier">clothing</span>
+
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_color</span>(:<span class="ruby-identifier">automobiles</span>)  <span class="ruby-comment"># =&gt; &quot;red&quot;</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_color</span>(:<span class="ruby-identifier">clothing</span>)     <span class="ruby-comment"># =&gt; &quot;tan&quot;</span>
+
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferences</span>(:<span class="ruby-identifier">automobiles</span>)      <span class="ruby-comment"># =&gt; {&quot;color&quot;=&gt;&quot;red&quot;}</span>
+</pre>
+
+<h3 id="label-Saving+preferences">Saving preferences<span><a href="#label-Saving+preferences">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Note that preferences are not saved until the owning record is saved. <a
+href="Preferences.html">Preferences</a> are treated in a similar fashion to
+attributes.  For example,</p>
+
+<pre class="ruby"><span class="ruby-identifier">user</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">first</span>)
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">attributes</span> = {:<span class="ruby-identifier">prefers_hot_salsa</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>, :<span class="ruby-identifier">preferred_color</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;red&#39;</span>}
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">save!</span>
+</pre>
+
+<p><a href="Preferences.html">Preferences</a> are stored in a separate table
+called “preferences”.</p>
+
+<h3 id="label-Tracking+changes">Tracking changes<span><a href="#label-Tracking+changes">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Similar to <a href="ActiveRecord.html">ActiveRecord</a> attributes, unsaved
+changes to preferences can be tracked.  For example,</p>
+
+<pre class="ruby"><span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_language</span>               <span class="ruby-comment"># =&gt; &quot;English&quot;</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_language_changed?</span>      <span class="ruby-comment"># =&gt; false</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_language</span> = <span class="ruby-string">&#39;Spanish&#39;</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_language_changed?</span>      <span class="ruby-comment"># =&gt; true</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_language_was</span>           <span class="ruby-comment"># =&gt; &quot;English&quot;</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_language_change</span>        <span class="ruby-comment"># =&gt; [&quot;English&quot;, &quot;Spanish&quot;]</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">reset_preferred_language!</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_language</span>               <span class="ruby-comment"># =&gt; &quot;English&quot;</span>
+</pre>
+
+<p>Assigning the same value leaves the preference unchanged:</p>
+
+<pre class="ruby"><span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_language</span>               <span class="ruby-comment"># =&gt; &quot;English&quot;</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_language</span> = <span class="ruby-string">&#39;English&#39;</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_language_changed?</span>      <span class="ruby-comment"># =&gt; false</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred_language_change</span>        <span class="ruby-comment"># =&gt; nil</span>
+</pre>
+
+<h2 id="label-Testing">Testing<span><a href="#label-Testing">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Before you can run any tests, the following gem must be installed:</p>
+<ul><li>
+<p><a
+href="http://github.com/pluginaweek/plugin_test_helper">plugin_test_helper</a></p>
+</li></ul>
+
+<p>To run against a specific version of Rails:</p>
+
+<pre>rake test RAILS_FRAMEWORK_ROOT=/path/to/rails</pre>
+
+<h2 id="label-Dependencies">Dependencies<span><a href="#label-Dependencies">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Rails 2.3 or later</p>
+</li></ul>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.0.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

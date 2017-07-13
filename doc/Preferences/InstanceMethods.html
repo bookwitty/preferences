@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Preferences::InstanceMethods - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-preference_changes">#preference_changes</a>
+    
+    <li ><a href="#method-i-preferences">#preferences</a>
+    
+    <li ><a href="#method-i-preferences_changed">#preferences_changed</a>
+    
+    <li ><a href="#method-i-preferences_changed-3F">#preferences_changed?</a>
+    
+    <li ><a href="#method-i-preferred">#preferred</a>
+    
+    <li ><a href="#method-i-preferred-3F">#preferred?</a>
+    
+    <li ><a href="#method-i-prefers">#prefers</a>
+    
+    <li ><a href="#method-i-prefers-3F">#prefers?</a>
+    
+    <li ><a href="#method-i-write_preference">#write_preference</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Preferences::InstanceMethods">
+  <h1 id="module-Preferences::InstanceMethods" class="module">
+    module Preferences::InstanceMethods
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-preference_changes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">preference_changes</span><span
+            class="method-args">(group = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A map of the preferences that have changed in the current object.</p>
+
+<h2 id="method-i-preference_changes-label-Examples">Examples<span><a href="#method-i-preference_changes-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">first</span>)
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred</span>(:<span class="ruby-identifier">color</span>)                      <span class="ruby-comment"># =&gt; nil</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preference_changes</span>                     <span class="ruby-comment"># =&gt; {}</span>
+
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">write_preference</span>(:<span class="ruby-identifier">color</span>, <span class="ruby-string">&#39;red&#39;</span>)
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preference_changes</span>                     <span class="ruby-comment"># =&gt; {&quot;color&quot; =&gt; [nil, &quot;red&quot;]}</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preference_changes</span>                     <span class="ruby-comment"># =&gt; {}</span>
+
+<span class="ruby-comment"># Groups</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred</span>(:<span class="ruby-identifier">color</span>, :<span class="ruby-identifier">car</span>)                <span class="ruby-comment"># =&gt; nil</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preference_changes</span>(:<span class="ruby-identifier">car</span>)               <span class="ruby-comment"># =&gt; {}</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">write_preference</span>(:<span class="ruby-identifier">color</span>, <span class="ruby-string">&#39;red&#39;</span>, :<span class="ruby-identifier">car</span>)
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preference_changes</span>(:<span class="ruby-identifier">car</span>)               <span class="ruby-comment"># =&gt; {&quot;color&quot; =&gt; [nil, &quot;red&quot;]}</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="preference_changes-source">
+            <pre><span class="ruby-comment"># File lib/preferences.rb, line 501</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">preference_changes</span>(<span class="ruby-identifier">group</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">preferences_changed</span>(<span class="ruby-identifier">group</span>).<span class="ruby-identifier">each_with_object</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">preference</span>, <span class="ruby-identifier">changes</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">changes</span>[<span class="ruby-identifier">preference</span>] = <span class="ruby-identifier">preference_change</span>(<span class="ruby-identifier">preference</span>, <span class="ruby-identifier">group</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-preferences" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">preferences</span><span
+            class="method-args">(group = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds all preferences, including defaults, for the current record.  If
+looking up custom group preferences, then this will include all default
+preferences within that particular group as well.</p>
+
+<h2 id="method-i-preferences-label-Examples">Examples<span><a href="#method-i-preferences-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>A user with no stored values:</p>
+
+<pre>user = User.find(:first)
+user.preferences
+=&gt; {&quot;language&quot;=&gt;&quot;English&quot;, &quot;color&quot;=&gt;nil}</pre>
+
+<p>A user with stored values for a particular group:</p>
+
+<pre>user.preferred_color = &#39;red&#39;, :cars
+user.preferences(:cars)
+=&gt; {&quot;language=&gt;&quot;English&quot;, &quot;color&quot;=&gt;&quot;red&quot;}</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="preferences-source">
+            <pre><span class="ruby-comment"># File lib/preferences.rb, line 326</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">preferences</span>(<span class="ruby-identifier">group</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">preferences</span> = <span class="ruby-identifier">preferences_group</span>(<span class="ruby-identifier">group</span>)
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">preferences_group_loaded?</span>(<span class="ruby-identifier">group</span>)
+    <span class="ruby-identifier">group_id</span>, <span class="ruby-identifier">group_type</span> = <span class="ruby-constant">Preference</span>.<span class="ruby-identifier">split_group</span>(<span class="ruby-identifier">group</span>)
+    <span class="ruby-identifier">find_preferences</span>(<span class="ruby-identifier">group_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">group_id</span>, <span class="ruby-identifier">group_type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">group_type</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">preference</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">preferences</span>[<span class="ruby-identifier">preference</span>.<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">preference</span>.<span class="ruby-identifier">value</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">preferences</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">preference</span>.<span class="ruby-identifier">name</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Add defaults</span>
+    <span class="ruby-identifier">preference_definitions</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">definition</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">preferences</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">definition</span>.<span class="ruby-identifier">default_value</span>(<span class="ruby-identifier">group_type</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">preferences</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">preferences</span>.<span class="ruby-identifier">each_with_object</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>), <span class="ruby-identifier">typed_preferences</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">typed_preferences</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">preference_definitions</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">type_cast</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-preferences_changed" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">preferences_changed</span><span
+            class="method-args">(group = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A list of the preferences that have unsaved changes.</p>
+
+<h2 id="method-i-preferences_changed-label-Examples">Examples<span><a href="#method-i-preferences_changed-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">first</span>)
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferences_changed</span>                    <span class="ruby-comment"># =&gt; []</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">write_preference</span>(:<span class="ruby-identifier">color</span>, <span class="ruby-string">&#39;red&#39;</span>)
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferences_changed</span>                    <span class="ruby-comment"># =&gt; [&quot;color&quot;]</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferences_changed</span>                    <span class="ruby-comment"># =&gt; []</span>
+
+<span class="ruby-comment"># Groups</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferences_changed</span>(:<span class="ruby-identifier">car</span>)              <span class="ruby-comment"># =&gt; []</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">write_preference</span>(:<span class="ruby-identifier">color</span>, <span class="ruby-string">&#39;red&#39;</span>, :<span class="ruby-identifier">car</span>)
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferences_changed</span>(:<span class="ruby-identifier">car</span>)              <span class="ruby-comment"># =&gt; [&quot;color&quot;]</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="preferences_changed-source">
+            <pre><span class="ruby-comment"># File lib/preferences.rb, line 479</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">preferences_changed</span>(<span class="ruby-identifier">group</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">preferences_changed_group</span>(<span class="ruby-identifier">group</span>).<span class="ruby-identifier">keys</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-preferences_changed-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">preferences_changed?</span><span
+            class="method-args">(group = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Whether any attributes have unsaved changes.</p>
+
+<h2 id="method-i-preferences_changed-3F-label-Examples">Examples<span><a href="#method-i-preferences_changed-3F-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">first</span>)
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferences_changed?</span>                   <span class="ruby-comment"># =&gt; false</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">write_preference</span>(:<span class="ruby-identifier">color</span>, <span class="ruby-string">&#39;red&#39;</span>)
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferences_changed?</span>                   <span class="ruby-comment"># =&gt; true</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferences_changed?</span>                   <span class="ruby-comment"># =&gt; false</span>
+
+<span class="ruby-comment"># Groups</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferences_changed?</span>(:<span class="ruby-identifier">car</span>)             <span class="ruby-comment"># =&gt; false</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">write_preference</span>(:<span class="ruby-identifier">color</span>, <span class="ruby-string">&#39;red&#39;</span>, :<span class="ruby-identifier">car</span>)
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferences_changed</span>(:<span class="ruby-identifier">car</span>)              <span class="ruby-comment"># =&gt; true</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="preferences_changed-3F-source">
+            <pre><span class="ruby-comment"># File lib/preferences.rb, line 460</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">preferences_changed?</span>(<span class="ruby-identifier">group</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-operator">!</span><span class="ruby-identifier">preferences_changed_group</span>(<span class="ruby-identifier">group</span>).<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-preferred" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">preferred</span><span
+            class="method-args">(name, group = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets the actual value stored for the given preference, or the default value
+if nothing is present.</p>
+
+<h2 id="method-i-preferred-label-Examples">Examples<span><a href="#method-i-preferred-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">User</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">preference</span> :<span class="ruby-identifier">color</span>, :<span class="ruby-identifier">string</span>, :<span class="ruby-identifier">default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;red&#39;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">create</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred</span>(:<span class="ruby-identifier">color</span>)            <span class="ruby-comment"># =&gt; &quot;red&quot;</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred</span>(:<span class="ruby-identifier">color</span>, <span class="ruby-string">&#39;cars&#39;</span>)    <span class="ruby-comment"># =&gt; &quot;red&quot;</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred</span>(:<span class="ruby-identifier">color</span>, <span class="ruby-constant">Car</span>.<span class="ruby-identifier">first</span>) <span class="ruby-comment"># =&gt; &quot;red&quot;</span>
+
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">write_preference</span>(:<span class="ruby-identifier">color</span>, <span class="ruby-string">&#39;blue&#39;</span>)
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred</span>(:<span class="ruby-identifier">color</span>)            <span class="ruby-comment"># =&gt; &quot;blue&quot;</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="preferred-source">
+            <pre><span class="ruby-comment"># File lib/preferences.rb, line 389</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">preferred</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">group</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">assert_valid_preference</span>(<span class="ruby-identifier">name</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">preferences_group</span>(<span class="ruby-identifier">group</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-comment"># Value for this group/name has been written, but not saved yet:</span>
+    <span class="ruby-comment"># grab from the pending values</span>
+    <span class="ruby-identifier">value</span> = <span class="ruby-identifier">preferences_group</span>(<span class="ruby-identifier">group</span>)[<span class="ruby-identifier">name</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># Grab the first preference; if it doesn&#39;t exist, use the default value</span>
+    <span class="ruby-identifier">group_id</span>, <span class="ruby-identifier">group_type</span> = <span class="ruby-constant">Preference</span>.<span class="ruby-identifier">split_group</span>(<span class="ruby-identifier">group</span>)
+    <span class="ruby-identifier">preference</span> = <span class="ruby-identifier">find_preferences</span>(<span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">group_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">group_id</span>, <span class="ruby-identifier">group_type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">group_type</span>).<span class="ruby-identifier">first</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">preferences_group_loaded?</span>(<span class="ruby-identifier">group</span>)
+
+    <span class="ruby-identifier">value</span> = <span class="ruby-identifier">preference</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">preference</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">preference_definitions</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">default_value</span>(<span class="ruby-identifier">group_type</span>)
+    <span class="ruby-identifier">preferences_group</span>(<span class="ruby-identifier">group</span>)[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">definition</span> = <span class="ruby-identifier">preference_definitions</span>[<span class="ruby-identifier">name</span>]
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">definition</span>.<span class="ruby-identifier">type_cast</span>(<span class="ruby-identifier">value</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="InstanceMethods.html#method-i-prefers">prefers</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-preferred-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">preferred?</span><span
+            class="method-args">(name, group = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Queries whether or not a value is present for the given preference. This is
+dependent on how the value is type-casted.</p>
+
+<h2 id="method-i-preferred-3F-label-Examples">Examples<span><a href="#method-i-preferred-3F-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">User</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">preference</span> :<span class="ruby-identifier">color</span>, :<span class="ruby-identifier">string</span>, :<span class="ruby-identifier">default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;red&#39;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">create</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred</span>(:<span class="ruby-identifier">color</span>)              <span class="ruby-comment"># =&gt; &quot;red&quot;</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred?</span>(:<span class="ruby-identifier">color</span>)             <span class="ruby-comment"># =&gt; true</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred?</span>(:<span class="ruby-identifier">color</span>, <span class="ruby-string">&#39;cars&#39;</span>)     <span class="ruby-comment"># =&gt; true</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred?</span>(:<span class="ruby-identifier">color</span>, <span class="ruby-constant">Car</span>.<span class="ruby-identifier">first</span>)  <span class="ruby-comment"># =&gt; true</span>
+
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">write_preference</span>(:<span class="ruby-identifier">color</span>, <span class="ruby-keyword">nil</span>)
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred</span>(:<span class="ruby-identifier">color</span>)              <span class="ruby-comment"># =&gt; nil</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">preferred?</span>(:<span class="ruby-identifier">color</span>)             <span class="ruby-comment"># =&gt; false</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="preferred-3F-source">
+            <pre><span class="ruby-comment"># File lib/preferences.rb, line 364</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">preferred?</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">group</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">assert_valid_preference</span>(<span class="ruby-identifier">name</span>)
+
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">preferred</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">group</span>)
+  <span class="ruby-identifier">preference_definitions</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">query</span>(<span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="InstanceMethods.html#method-i-prefers-3F">prefers?</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-prefers" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">prefers</span><span
+            class="method-args">(name, group = nil)</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="InstanceMethods.html#method-i-preferred">preferred</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-prefers-3F" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">prefers?</span><span
+            class="method-args">(name, group = nil)</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="InstanceMethods.html#method-i-preferred-3F">preferred?</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-write_preference" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">write_preference</span><span
+            class="method-args">(name, value, group = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets a new value for the given preference.  The actual <a
+href="../Preference.html">Preference</a> record is <strong>not</strong>
+created until this record is saved.  In this way, preferences act
+<strong>exactly</strong> the same as attributes.  They can be written to
+and validated against, but won&#39;t actually be written to the database
+until the record is saved.</p>
+
+<h2 id="method-i-write_preference-label-Examples">Examples<span><a href="#method-i-write_preference-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">first</span>)
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">write_preference</span>(:<span class="ruby-identifier">color</span>, <span class="ruby-string">&#39;red&#39;</span>)              <span class="ruby-comment"># =&gt; &quot;red&quot;</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">save!</span>
+
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">write_preference</span>(:<span class="ruby-identifier">color</span>, <span class="ruby-string">&#39;blue&#39;</span>, <span class="ruby-constant">Car</span>.<span class="ruby-identifier">first</span>)  <span class="ruby-comment"># =&gt; &quot;blue&quot;</span>
+<span class="ruby-identifier">user</span>.<span class="ruby-identifier">save!</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="write_preference-source">
+            <pre><span class="ruby-comment"># File lib/preferences.rb, line 426</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">write_preference</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">group</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">assert_valid_preference</span>(<span class="ruby-identifier">name</span>)
+
+  <span class="ruby-identifier">preferences_changed</span> = <span class="ruby-identifier">preferences_changed_group</span>(<span class="ruby-identifier">group</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">preferences_changed</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">old</span> = <span class="ruby-identifier">preferences_changed</span>[<span class="ruby-identifier">name</span>]
+    <span class="ruby-identifier">preferences_changed</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">name</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">preference_value_changed?</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">old</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">old</span> = <span class="ruby-identifier">clone_preference_value</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">group</span>)
+    <span class="ruby-identifier">preferences_changed</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">old</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">preference_value_changed?</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">old</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">convert_number_column_value</span>(<span class="ruby-identifier">value</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">preference_definitions</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">number?</span>
+  <span class="ruby-identifier">preferences_group</span>(<span class="ruby-identifier">group</span>)[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">value</span>
+
+  <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.0.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
